@@ -318,26 +318,20 @@ void traverseCircular()
         printf("No urgent redeployment robots.\n");
         return;
     }
-    else 
+    struct Circularnode* temp = circularhead;
+    int cycles = 0;
+    printf("\nUrgent Redeployment Cycle (2x):\n");
+    do 
     {
-        struct Circularnode* temp = circularhead;
-        int count = 0; // Declare and initialize count
-        printf("\nUrgent Redeployment Cycle (2x):\n");
-        do 
-        {
-            printf("%s -> ", temp->name);
-            temp = temp->next;
-            count++;
-        } while (temp != circularhead || count < 2);
-        while(count < 4) 
-        {
-            printf("%s -> ", temp->name);
-            temp = temp->next;
-            count++;
-        }
-        printf("Back to start\n");
-    }
+        printf("%s -> ", temp->name);
+        temp = temp->next;
+        // If we have completed a cycle, increment cycles
+        if (temp == circularhead)
+            cycles++;
+    } while (cycles < 2);
+    printf("Back to start\n");
 }
+
 // Function to free the memory of the circular linked list
 void freeMemory()
 {
