@@ -2,7 +2,7 @@
 Title   : Earthquake Rescue Robot Coordinator
 NAME    : SAHIL KUMAR
 ROLL NO : ME24I1009
-Date    : [Submission Date]
+Date    : 24 - 04 - 2025
 Purpose : Simulate rescue coordination with queue, stack, logs,
           and robot repair tracking (linked lists)
 ************************************************************/
@@ -239,8 +239,7 @@ void forwardTraversal()
         return;
     }
     else 
-    {   
-        // printf("Repaired robots in forward order:\n");
+    {  
         struct Doublynode* temp = repairhead;
         printf("Repaired robots in forward order:\n");
         while (temp != NULL) 
